@@ -9,6 +9,7 @@ namespace DarkHider
     {
         public Bitmap Btp;
         public Image Imagepath;
+        string path = @"C:\DarkHider\lang.txt";
 
         public Message()
         {
@@ -32,10 +33,11 @@ namespace DarkHider
             f.Hideit(SecretMessageBox2.Text, Btp);
             f.ko = Btp;
             f.MainPictureBox.Image = Imagepath;
-            using (var lan2 = new StreamReader("datalang2.txt"))
+            using (TextReader tr = new StreamReader(path))
             {
-                var langMode = lan2.ReadLine();
-                if (langMode == "arabic")
+                string langugeChoused = tr.ReadLine();
+
+                if (langugeChoused == "arabic")
                 {
                     f.bunifuTileButton1.LabelText = "إفتح صورة";
                     f.bunifuTileButton2.LabelText = "إحفظ الصورة";

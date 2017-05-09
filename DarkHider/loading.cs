@@ -7,12 +7,14 @@ namespace DarkHider
 {
     public partial class loading : Form
     {
+       
         private readonly Timer t = new Timer();
         private Bitmap bmp;
-        private readonly Form1 f = new Form1();
         private Graphics g;
         private double pbUnit;
         private int pbWIDTH, pbHEIGHT, pbComplete;
+        Form1 fom = new Form1();
+        string path = @"C:\DarkHider\lang.txt";
 
         public loading()
         {
@@ -53,20 +55,59 @@ namespace DarkHider
             var myBrush = new SolidBrush(Color.FromArgb(37, 155, 36));
             g.FillRectangle(myBrush, new Rectangle(0, 0, (int) (pbComplete * pbUnit), pbHEIGHT));
 
+
+
+
+
+
+
+
+
+
+
+
+
+
             if (pbComplete == 60)
             {
-                t.Interval = 40;
-                using (var lan2 = new StreamReader("datalang2.txt"))
+
+                if (!File.Exists(path))
                 {
-                    var langMode = lan2.ReadLine();
-                    if (langMode == "arabic")
+                    File.Create(path).Dispose();
+                    using (TextWriter tw = new StreamWriter(path))
                     {
-                        f.bunifuTileButton1.LabelText = "إفتح صورة";
-                        f.bunifuTileButton2.LabelText = "إحفظ الصورة";
-                        f.bunifuTileButton3.LabelText = "أكتب الرسالة";
-                        f.bunifuTileButton4.LabelText = "أظهر الصورة";
-                        f.bunifuTileButton5.LabelText = "عن البرنامج";
-                        f.bunifuTileButton6.LabelText = "إعداداتي";
+                        tw.WriteLine("english");
+                        tw.Close();
+                    }
+
+                }
+                
+            }
+
+
+
+
+
+
+
+            if (pbComplete == 70)
+            {
+
+                if (File.Exists(path))
+                {
+                    using (TextReader tr = new StreamReader(path))
+                    {
+                        string langugeChoused = tr.ReadLine();
+
+                        if (langugeChoused == "arabic")
+                        {
+                            fom.bunifuTileButton1.LabelText = "إفتح صورة";
+                            fom.bunifuTileButton2.LabelText = "إحفظ الصورة";
+                            fom.bunifuTileButton3.LabelText = "أكتب الرسالة";
+                            fom.bunifuTileButton4.LabelText = "أظهر الصورة";
+                            fom.bunifuTileButton5.LabelText = "عن البرنامج";
+                            fom.bunifuTileButton6.LabelText = "إعداداتي";
+                        }
                     }
                 }
             }
@@ -79,8 +120,11 @@ namespace DarkHider
                 g.Dispose();
                 t.Stop();
                 Hide();
-                f.Show();
+                
+                fom.Show();
             }
         }
+
+       
     }
 }

@@ -10,6 +10,7 @@ namespace DarkHider
     {
         public Bitmap bmp;
         public Bitmap ko;
+        string path = @"C:\DarkHider\lang.txt";
 
         public Form1()
         {
@@ -53,26 +54,34 @@ namespace DarkHider
             var SecretMessage = Stegnography.extractText(bmp);
             var sm = new ShowMessage();
             sm.userMessage.Text = SecretMessage;
-            using (var lan2 = new StreamReader("datalang2.txt"))
+
+            using (TextReader tr = new StreamReader(path))
             {
-                var langMode = lan2.ReadLine();
-                if (langMode == "arabic")
-                    sm.bunifuCustomLabel2.Text = "الرسالة";
+                string langugeChoused = tr.ReadLine();
+
+                if (langugeChoused == "arabic")
+                {
+                     sm.bunifuCustomLabel2.Text = "الرسالة";
+                }
             }
+
+           
             sm.Show();
         }
 
         private void bunifuTileButton5_Click(object sender, EventArgs e)
         {
             var ab = new About();
-            using (var lan2 = new StreamReader("datalang2.txt"))
+           using (TextReader tr = new StreamReader(path))
             {
-                var langMode = lan2.ReadLine();
-                if (langMode == "arabic")
+                string langugeChoused = tr.ReadLine();
+
+                if (langugeChoused == "arabic")
                 {
-                    ab.bunifuCustomLabel1.Text = "هذا البرنامج مطور و مصمم من طرف سماحي أمين مع أستوديو جات لايت";
+                     ab.bunifuCustomLabel1.Text = "هذا البرنامج مطور و مصمم من طرف سماحي أمين مع أستوديو جات لايت";
                     ab.bunifuCustomLabel2.Text = "كل الحقوق محفوظة";
                 }
+          
             }
             ab.Show();
         }
@@ -92,10 +101,11 @@ namespace DarkHider
             var ms = new Message();
             ms.Btp = (Bitmap) MainPictureBox.Image;
             ms.Imagepath = MainPictureBox.Image;
-            using (var lan2 = new StreamReader("datalang2.txt"))
+            using (TextReader tr = new StreamReader(path))
             {
-                var langMode = lan2.ReadLine();
-                if (langMode == "arabic")
+                string langugeChoused = tr.ReadLine();
+
+                if (langugeChoused == "arabic")
                 {
                     ms.bunifuCustomLabel1.Text = "أكتب الرسالة التي تريد إخفائها";
                     ms.bunifuFlatButton1.Text = "إخفاء الصورة";
@@ -138,10 +148,11 @@ namespace DarkHider
         private void bunifuTileButton6_Click(object sender, EventArgs e)
         {
             var st = new setting();
-            using (var lan2 = new StreamReader("datalang2.txt"))
+            using (TextReader tr = new StreamReader(path))
             {
-                var langMode = lan2.ReadLine();
-                if (langMode == "arabic")
+                string langugeChoused = tr.ReadLine();
+
+                if (langugeChoused == "arabic")
                 {
                     st.bunifuCustomLabel2.Text = "العربية";
                     st.bunifuFlatButton1.Text = "إلغاء التثبيت";

@@ -6,6 +6,7 @@ namespace DarkHider
 {
     public partial class setting : Form
     {
+        string path = @"C:\DarkHider\lang.txt";
         public setting()
         {
             InitializeComponent();
@@ -18,12 +19,13 @@ namespace DarkHider
 
         private void bunifuFlatButton2_Click(object sender, EventArgs e)
         {
-            using (var lan = new StreamWriter("datalang2.txt"))
+          
+            using (TextWriter tw = new StreamWriter(path))
             {
                 if (langchouse.Value)
-                    lan.WriteLine("arabic");
+                    tw.WriteLine("arabic");
                 else
-                    lan.WriteLine("english");
+                    tw.WriteLine("english");
             }
 
             MessageBox.Show("Saved Succesfully ! You need to restart the programme to apply the changes");
@@ -31,10 +33,10 @@ namespace DarkHider
 
         private void setting_Load(object sender, EventArgs e)
         {
-            using (var lan2 = new StreamReader("datalang2.txt"))
+            using (TextReader tr = new StreamReader(path))
             {
-                var langMode = lan2.ReadLine();
-                if (langMode == "arabic")
+                string langugeChoused = tr.ReadLine();
+                if (langugeChoused == "arabic")
                     langchouse.Value = true;
                 else
                     langchouse.Value = false;
