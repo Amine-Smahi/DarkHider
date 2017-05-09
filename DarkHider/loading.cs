@@ -7,14 +7,13 @@ namespace DarkHider
 {
     public partial class loading : Form
     {
-       
         private readonly Timer t = new Timer();
         private Bitmap bmp;
+        private readonly Form1 fom = new Form1();
         private Graphics g;
+        private readonly string path = @"C:\DarkHider\lang.txt";
         private double pbUnit;
         private int pbWIDTH, pbHEIGHT, pbComplete;
-        Form1 fom = new Form1();
-        string path = @"C:\DarkHider\lang.txt";
 
         public loading()
         {
@@ -56,21 +55,7 @@ namespace DarkHider
             g.FillRectangle(myBrush, new Rectangle(0, 0, (int) (pbComplete * pbUnit), pbHEIGHT));
 
 
-
-
-
-
-
-
-
-
-
-
-
-
             if (pbComplete == 60)
-            {
-
                 if (!File.Exists(path))
                 {
                     File.Create(path).Dispose();
@@ -79,25 +64,14 @@ namespace DarkHider
                         tw.WriteLine("english");
                         tw.Close();
                     }
-
                 }
-                
-            }
-
-
-
-
-
 
 
             if (pbComplete == 70)
-            {
-
                 if (File.Exists(path))
-                {
                     using (TextReader tr = new StreamReader(path))
                     {
-                        string langugeChoused = tr.ReadLine();
+                        var langugeChoused = tr.ReadLine();
 
                         if (langugeChoused == "arabic")
                         {
@@ -109,8 +83,6 @@ namespace DarkHider
                             fom.bunifuTileButton6.LabelText = "إعداداتي";
                         }
                     }
-                }
-            }
 
             picboxPB.Image = bmp;
             pbComplete++;
@@ -120,11 +92,9 @@ namespace DarkHider
                 g.Dispose();
                 t.Stop();
                 Hide();
-                
+
                 fom.Show();
             }
         }
-
-       
     }
 }

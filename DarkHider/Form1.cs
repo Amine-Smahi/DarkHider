@@ -10,7 +10,7 @@ namespace DarkHider
     {
         public Bitmap bmp;
         public Bitmap ko;
-        string path = @"C:\DarkHider\lang.txt";
+        private readonly string path = @"C:\DarkHider\lang.txt";
 
         public Form1()
         {
@@ -57,31 +57,28 @@ namespace DarkHider
 
             using (TextReader tr = new StreamReader(path))
             {
-                string langugeChoused = tr.ReadLine();
+                var langugeChoused = tr.ReadLine();
 
                 if (langugeChoused == "arabic")
-                {
-                     sm.bunifuCustomLabel2.Text = "الرسالة";
-                }
+                    sm.bunifuCustomLabel2.Text = "الرسالة";
             }
 
-           
+
             sm.Show();
         }
 
         private void bunifuTileButton5_Click(object sender, EventArgs e)
         {
             var ab = new About();
-           using (TextReader tr = new StreamReader(path))
+            using (TextReader tr = new StreamReader(path))
             {
-                string langugeChoused = tr.ReadLine();
+                var langugeChoused = tr.ReadLine();
 
                 if (langugeChoused == "arabic")
                 {
-                     ab.bunifuCustomLabel1.Text = "هذا البرنامج مطور و مصمم من طرف سماحي أمين مع أستوديو جات لايت";
+                    ab.bunifuCustomLabel1.Text = "هذا البرنامج مطور و مصمم من طرف سماحي أمين مع أستوديو جات لايت";
                     ab.bunifuCustomLabel2.Text = "كل الحقوق محفوظة";
                 }
-          
             }
             ab.Show();
         }
@@ -103,7 +100,7 @@ namespace DarkHider
             ms.Imagepath = MainPictureBox.Image;
             using (TextReader tr = new StreamReader(path))
             {
-                string langugeChoused = tr.ReadLine();
+                var langugeChoused = tr.ReadLine();
 
                 if (langugeChoused == "arabic")
                 {
@@ -150,7 +147,7 @@ namespace DarkHider
             var st = new setting();
             using (TextReader tr = new StreamReader(path))
             {
-                string langugeChoused = tr.ReadLine();
+                var langugeChoused = tr.ReadLine();
 
                 if (langugeChoused == "arabic")
                 {

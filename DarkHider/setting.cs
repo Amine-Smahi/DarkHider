@@ -6,7 +6,8 @@ namespace DarkHider
 {
     public partial class setting : Form
     {
-        string path = @"C:\DarkHider\lang.txt";
+        private readonly string path = @"C:\DarkHider\lang.txt";
+
         public setting()
         {
             InitializeComponent();
@@ -19,7 +20,6 @@ namespace DarkHider
 
         private void bunifuFlatButton2_Click(object sender, EventArgs e)
         {
-          
             using (TextWriter tw = new StreamWriter(path))
             {
                 if (langchouse.Value)
@@ -35,7 +35,7 @@ namespace DarkHider
         {
             using (TextReader tr = new StreamReader(path))
             {
-                string langugeChoused = tr.ReadLine();
+                var langugeChoused = tr.ReadLine();
                 if (langugeChoused == "arabic")
                     langchouse.Value = true;
                 else

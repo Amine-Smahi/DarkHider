@@ -9,7 +9,7 @@ namespace DarkHider
     {
         public Bitmap Btp;
         public Image Imagepath;
-        string path = @"C:\DarkHider\lang.txt";
+        private readonly string path = @"C:\DarkHider\lang.txt";
 
         public Message()
         {
@@ -35,7 +35,7 @@ namespace DarkHider
             f.MainPictureBox.Image = Imagepath;
             using (TextReader tr = new StreamReader(path))
             {
-                string langugeChoused = tr.ReadLine();
+                var langugeChoused = tr.ReadLine();
 
                 if (langugeChoused == "arabic")
                 {
