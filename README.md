@@ -8,6 +8,9 @@ It’s pretty easy to use, you just hide your message in a picture and then you 
 ### Download 
 Download the current version <a href="https://github.com/Amine-Smahi/DarkHider/raw/master/Installer.zip">DarkHider 1.2</a>
 
+### How it Work
+Check the <a href="https://github.com/Amine-Smahi/DarkHider/wiki/How-it-work">Documentation</a>
+
 ### License
 <code>
 MIT License
