@@ -40,31 +40,42 @@ namespace DarkHider
 
         private void bunifuTileButton2_Click(object sender, EventArgs e)
         {
-            var save_dialog = new SaveFileDialog();
-            save_dialog.Filter = "PNG Image|*.png";
 
-            if (save_dialog.ShowDialog() == DialogResult.OK)
-                ko.Save(save_dialog.FileName, ImageFormat.Png);
+                var save_dialog = new SaveFileDialog();
+                save_dialog.Filter = "PNG Image|*.png";
+
+                if (save_dialog.ShowDialog() == DialogResult.OK)
+                    ko.Save(save_dialog.FileName, ImageFormat.Png);
+            
+          
         }
 
         private void bunifuTileButton4_Click(object sender, EventArgs e)
         {
-            bmp = (Bitmap) MainPictureBox.Image;
-
-            var SecretMessage = Stegnography.extractText(bmp);
-            var sm = new ShowMessage();
-            sm.userMessage.Text = SecretMessage;
-
-            using (TextReader tr = new StreamReader(path))
+            try
             {
-                var langugeChoused = tr.ReadLine();
+                bmp = (Bitmap) MainPictureBox.Image;
 
-                if (langugeChoused == "arabic")
-                    sm.bunifuCustomLabel2.Text = "الرسالة";
+                var SecretMessage = Stegnography.extractText(bmp);
+                var sm = new ShowMessage();
+                sm.userMessage.Text = SecretMessage;
+
+                using (TextReader tr = new StreamReader(path))
+                {
+                    var langugeChoused = tr.ReadLine();
+
+                    if (langugeChoused == "arabic")
+                        sm.bunifuCustomLabel2.Text = "الرسالة";
+                }
+
+
+                sm.Show();
             }
-
-
-            sm.Show();
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex);
+                MessageBox.Show("Pleas select an image !");
+            }
         }
 
         private void bunifuTileButton5_Click(object sender, EventArgs e)
@@ -115,16 +126,24 @@ namespace DarkHider
 
         public void Hideit(string a, Bitmap bmp)
         {
-            if (a.Equals(""))
+            try
             {
-                MessageBox.Show("Please Enter Some Text You Want to Hide.", "Warning");
+                if (a.Equals(""))
+                {
+                    MessageBox.Show("Please Enter Some Text You Want to Hide.", "Warning");
 
-                return;
+                    return;
+                }
+
+                bmp = Stegnography.embedText(a, bmp);
+
+                MessageBox.Show("Your Text is now Hidden in the Image.\nUse the Save Image option from Menu.", "Done");
             }
-
-            bmp = Stegnography.embedText(a, bmp);
-
-            MessageBox.Show("Your Text is now Hidden in the Image.\nUse the Save Image option from Menu.", "Done");
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex);
+                MessageBox.Show("You didnt chouse an image");
+            }
         }
 
         private void Form1_Load(object sender, EventArgs e)
