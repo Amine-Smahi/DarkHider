@@ -9,7 +9,7 @@ namespace DarkHider
     {
         public Bitmap Btp;
         public Image Imagepath;
-        private readonly string path = @"C:\DarkHider\lang.txt";
+        private readonly string path = @".\a\lang.txt";
 
         public Message()
         {

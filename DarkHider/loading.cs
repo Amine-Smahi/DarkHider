@@ -11,7 +11,7 @@ namespace DarkHider
         private Bitmap bmp;
         private readonly Form1 fom = new Form1();
         private Graphics g;
-        private readonly string path = @"C:\DarkHider\lang.txt";
+        private readonly string path = @".\a\lang.txt";
         private double pbUnit;
         private int pbWIDTH, pbHEIGHT, pbComplete;
 
@@ -56,16 +56,30 @@ namespace DarkHider
 
 
             if (pbComplete == 60)
-                if (!File.Exists(path))
+            {
+
+                FileInfo fi = new FileInfo(@".\a\lang.txt");
+                DirectoryInfo di = new DirectoryInfo(@".\a");
+                if (!di.Exists)
                 {
-                    File.Create(path).Dispose();
-                    using (TextWriter tw = new StreamWriter(path))
-                    {
-                        tw.WriteLine("english");
-                        tw.Close();
-                    }
+                    di.Create();
+                }
+                if (!fi.Exists)
+                {
+                    fi.Create().Dispose();
                 }
 
+                /* if (!File.Exists(path))
+                 {
+                     File.Create(path).Dispose();
+                     using (TextWriter tw = new StreamWriter(path))
+                     {
+                         tw.WriteLine("english");
+                         tw.Close();
+                     }
+                 }
+                 */
+            }
 
             if (pbComplete == 70)
                 if (File.Exists(path))

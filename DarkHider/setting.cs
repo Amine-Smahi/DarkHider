@@ -6,7 +6,7 @@ namespace DarkHider
 {
     public partial class setting : Form
     {
-        private readonly string path = @"C:\DarkHider\lang.txt";
+        private readonly string path = @".\a\lang.txt";
 
         public setting()
         {

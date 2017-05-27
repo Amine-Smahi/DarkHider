@@ -81,11 +81,32 @@ namespace DarkHider.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to .
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static string data {
+        internal static System.Drawing.Bitmap Clipboard_64px1 {
             get {
-                return ResourceManager.GetString("data", resourceCulture);
+                object obj = ResourceManager.GetObject("Clipboard_64px1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Delete_48px {
+            get {
+                object obj = ResourceManager.GetObject("Delete_48px", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Delete_48px_2 {
+            get {
+                object obj = ResourceManager.GetObject("Delete_48px_2", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
             }
         }
         
@@ -94,7 +115,17 @@ namespace DarkHider.Properties {
         /// </summary>
         internal static System.Drawing.Bitmap Edit_Property_64px {
             get {
-                object obj = ResourceManager.GetObject("Edit Property_64px", resourceCulture);
+                object obj = ResourceManager.GetObject("Edit_Property_64px", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap logo {
+            get {
+                object obj = ResourceManager.GetObject("logo", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -112,9 +143,39 @@ namespace DarkHider.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap logo21 {
+            get {
+                object obj = ResourceManager.GetObject("logo21", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Minimize_Window_64p {
+            get {
+                object obj = ResourceManager.GetObject("Minimize_Window_64p", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap Open_Folder_64px {
             get {
-                object obj = ResourceManager.GetObject("Open Folder_64px", resourceCulture);
+                object obj = ResourceManager.GetObject("Open_Folder_64px", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Password_64px_4 {
+            get {
+                object obj = ResourceManager.GetObject("Password_64px_4", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -132,6 +193,16 @@ namespace DarkHider.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap Save_64px1 {
+            get {
+                object obj = ResourceManager.GetObject("Save_64px1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap Settings_64px {
             get {
                 object obj = ResourceManager.GetObject("Settings_64px", resourceCulture);
@@ -142,20 +213,20 @@ namespace DarkHider.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap Settings_64px_1 {
+        internal static System.Drawing.Bitmap Show_Password_64px {
             get {
-                object obj = ResourceManager.GetObject("Settings_64px_1", resourceCulture);
+                object obj = ResourceManager.GetObject("Show_Password_64px", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
         
         /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        ///   Looks up a localized resource of type System.Drawing.Icon similar to (Icon).
         /// </summary>
-        internal static System.Drawing.Bitmap Show_Password_64px {
+        internal static System.Drawing.Icon t_l_charger {
             get {
-                object obj = ResourceManager.GetObject("Show Password_64px", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
+                object obj = ResourceManager.GetObject("t_l_charger", resourceCulture);
+                return ((System.Drawing.Icon)(obj));
             }
         }
     }
