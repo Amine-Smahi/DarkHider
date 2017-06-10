@@ -43,10 +43,11 @@ namespace DarkHider
                     f.bunifuTileButton2.LabelText = "إحفظ الصورة";
                     f.bunifuTileButton3.LabelText = "أكتب الرسالة";
                     f.bunifuTileButton4.LabelText = "أظهر الصورة";
-                    f.bunifuTileButton5.LabelText = "عن البرنامج";
+                    f.about_us.LabelText = "عن البرنامج";
                     f.bunifuTileButton6.LabelText = "إعداداتي";
                 }
             }
+            f.bunifuTileButton7.Enabled = true;
             f.Show();
             Hide();
         }

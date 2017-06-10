@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(loading));
             this.bunifuCustomLabel1 = new Bunifu.Framework.UI.BunifuCustomLabel();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.picboxPB = new System.Windows.Forms.PictureBox();
@@ -37,7 +38,7 @@
             // 
             // bunifuCustomLabel1
             // 
-            this.bunifuCustomLabel1.Font = new System.Drawing.Font("Century Gothic", 21.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.bunifuCustomLabel1.Font = new System.Drawing.Font("Microsoft Sans Serif", 21.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.bunifuCustomLabel1.ForeColor = System.Drawing.Color.White;
             this.bunifuCustomLabel1.Location = new System.Drawing.Point(126, 90);
             this.bunifuCustomLabel1.Name = "bunifuCustomLabel1";
@@ -74,6 +75,7 @@
             this.Controls.Add(this.picboxPB);
             this.Controls.Add(this.bunifuCustomLabel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "loading";
             this.Opacity = 0.9D;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;

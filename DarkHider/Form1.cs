@@ -78,7 +78,7 @@ namespace DarkHider
             }
         }
 
-        private void bunifuTileButton5_Click(object sender, EventArgs e)
+        private void about_us_Click(object sender, EventArgs e)
         {
             var ab = new About();
             using (TextReader tr = new StreamReader(path))
@@ -138,6 +138,7 @@ namespace DarkHider
                 bmp = Stegnography.embedText(a, bmp);
 
                 MessageBox.Show("Your Text is now Hidden in the Image.\nUse the Save Image option from Menu.", "Done");
+                
             }
             catch (Exception ex)
             {
@@ -159,6 +160,7 @@ namespace DarkHider
                         }*/
             var inf = new info();
             showinfo.Text = inf.RandomInfo();
+            
         }
 
         private void bunifuTileButton6_Click(object sender, EventArgs e)
@@ -176,6 +178,20 @@ namespace DarkHider
                 }
             }
             st.Show();
+        }
+
+      
+
+        private void bunifuImageButton3_Click(object sender, EventArgs e)
+        {
+            try { 
+            Clipboard.SetImage(MainPictureBox.Image);
+            }
+            catch(Exception ex)
+            {
+                MessageBox.Show("Open an Image first !");
+                Console.WriteLine(ex);
+            }
         }
     }
 }

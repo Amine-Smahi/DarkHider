@@ -93,7 +93,7 @@ namespace DarkHider
                             fom.bunifuTileButton2.LabelText = "إحفظ الصورة";
                             fom.bunifuTileButton3.LabelText = "أكتب الرسالة";
                             fom.bunifuTileButton4.LabelText = "أظهر الصورة";
-                            fom.bunifuTileButton5.LabelText = "عن البرنامج";
+                            fom.about_us.LabelText = "عن البرنامج";
                             fom.bunifuTileButton6.LabelText = "إعداداتي";
                         }
                     }

@@ -35,7 +35,7 @@ namespace DarkHider
 
             // pass through the rows
             for (i = 0; i < bmp.Height; i++)
-                if (i != null)
+             
                     for (var j = 0; j < bmp.Width; j++)
                     {
                         // holds the pixel that is currently being processed

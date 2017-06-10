@@ -213,6 +213,16 @@ namespace DarkHider.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap Share_52px {
+            get {
+                object obj = ResourceManager.GetObject("Share_52px", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap Show_Password_64px {
             get {
                 object obj = ResourceManager.GetObject("Show_Password_64px", resourceCulture);
